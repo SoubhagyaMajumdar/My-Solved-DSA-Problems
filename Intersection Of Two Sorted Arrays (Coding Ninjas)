@@ -1,0 +1,28 @@
+#include <bits/stdc++.h> 
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	// Write your code here.
+	int i = 0;
+	int j = 0;
+
+	vector<int> Intersection;
+
+	while(i<n && j<m)  // While they are within size of Arrays
+	{
+		if(arr1[i] < arr2[j])
+		{
+			i++;
+		}	
+		else if(arr1[i] == arr2[j])
+		{
+			Intersection.push_back(arr1[i]);
+			i++;
+			j++;
+		}
+		else
+		{
+			j++;
+		}
+	}
+	return Intersection;
+}
