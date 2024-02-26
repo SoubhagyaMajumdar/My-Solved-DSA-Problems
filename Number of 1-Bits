@@ -1,0 +1,18 @@
+// Soubhagya Majumdar
+
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int Count = 0;
+
+        while (n != 0) {
+            // Checking Last bit
+            if (n & 1) {
+                Count++;
+            }
+            n = n >> 1;
+        }
+
+        return Count;
+    }
+};
