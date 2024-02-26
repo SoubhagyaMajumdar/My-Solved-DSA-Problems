@@ -1,0 +1,13 @@
+int findDuplicate(vector<int> &Arr) 
+{
+    int ans=0;
+    for(int i=0; i<Arr.size(); i++)
+    {
+        ans = ans ^ Arr[i];
+    }
+    for(int i=1; i<Arr.size(); i++)
+    {
+        ans = ans ^ i;
+    }
+    return ans;
+}
