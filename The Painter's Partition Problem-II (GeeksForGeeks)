@@ -1,0 +1,43 @@
+class Solution
+{
+  public:
+    long long minTime(int arr[], int n, int k)
+    {
+
+    long long s=0, e=0, ans;
+    for(int i=0; i<n; i++)
+    {
+        e+=arr[i];
+        
+        if(s<arr[i])
+        {
+            s=arr[i];
+        }
+    }
+    
+    
+    while(s<=e)
+    {
+        long long mid=s+(e-s)/2;
+        long long  Board=0, PainterCount=1;
+        for(int i=0; i<n; i++)
+        {
+            Board+=arr[i];
+            if(Board>mid)
+            {
+                Board=arr[i];
+                PainterCount++;
+            }
+        }
+        if(PainterCount>k)
+        {
+            s=mid+1;
+        }
+        else{
+            e=mid-1;
+            ans=mid;
+        }
+    }
+    return ans;
+    }
+};
