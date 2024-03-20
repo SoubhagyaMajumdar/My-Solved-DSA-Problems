@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int L, B;
+    int Area;
+
+    cin>>L;    //Taking the INPUT
+    cin>>B;
+
+    Area= (L*B);       
+    
+    cout<<Area;    // Giving the OUTPUT
+
+
+    return 0;
+}
